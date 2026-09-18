@@ -55,7 +55,7 @@ export const experience: Experience[] = [
       "First technical hire; designed core MERN architecture, CI/CD pipelines, and deployed to production from day zero.",
       "Architected an automated AI exam generation & evaluation engine (OpenAI API), reducing grading turnaround by 90%.",
       "Engineered zero-downtime payments and media ingestion using Razorpay webhooks and optimized Cloudinary pipelines.",
-      "Scaled the platform across 10+ institutions and 500+ daily active users, driving over ₹25L in transaction revenue.",
+      "Scaled the platform across 10+ institutions and 500+ daily active users, driving over ₹5.2L in transaction revenue.",
     ],
   },
   {
