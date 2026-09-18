@@ -8,11 +8,11 @@ type ProjectGridProps = {
 };
 
 const cardClass =
-  "group relative flex flex-col rounded-2xl border border-zinc-200/80 bg-white p-6 shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all duration-300 hover:border-zinc-300 hover:shadow-md dark:border-zinc-800/80 dark:bg-zinc-950/60 dark:shadow-none dark:hover:border-red-500/50 dark:hover:shadow-[0_0_30px_-10px_rgba(239,68,68,0.2)]";
+  "group relative flex min-w-0 flex-col rounded-2xl border border-zinc-200/80 bg-white p-4 shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all duration-300 hover:border-zinc-300 hover:shadow-md min-[400px]:p-5 sm:p-6 dark:border-zinc-800/80 dark:bg-zinc-950/60 dark:shadow-none dark:hover:border-red-500/50 dark:hover:shadow-[0_0_30px_-10px_rgba(239,68,68,0.2)]";
 
 export function ProjectGrid({ projects }: ProjectGridProps) {
   return (
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+    <div className="grid grid-cols-1 gap-3 min-[400px]:gap-4 md:grid-cols-2">
       {projects.map((project) => (
         <article
           key={project.title}
@@ -20,8 +20,8 @@ export function ProjectGrid({ projects }: ProjectGridProps) {
             project.bento === "wide" ? "md:col-span-2" : ""
           } ${project.bento === "tall" ? "md:row-span-2" : ""}`}
         >
-          <div className="mb-4 flex items-start justify-between gap-4">
-            <h3 className="text-lg font-semibold tracking-tight text-zinc-900 dark:text-white">
+          <div className="mb-3 flex flex-col gap-3 min-[480px]:mb-4 min-[480px]:flex-row min-[480px]:items-start min-[480px]:justify-between min-[480px]:gap-4">
+            <h3 className="min-w-0 text-base font-semibold tracking-tight text-pretty text-zinc-900 min-[400px]:text-lg dark:text-white">
               {project.title}
             </h3>
             {project.href ? (
@@ -29,7 +29,7 @@ export function ProjectGrid({ projects }: ProjectGridProps) {
                 href={project.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex shrink-0 items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-50 px-2.5 py-1.5 font-mono text-[11px] text-zinc-600 transition-all group-hover:border-red-500/30 group-hover:text-red-600 dark:border-zinc-800 dark:bg-zinc-900/80 dark:text-zinc-400 dark:group-hover:text-red-400"
+                className="inline-flex w-fit shrink-0 items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-50 px-2.5 py-1.5 font-mono text-[11px] text-zinc-600 transition-all group-hover:border-red-500/30 group-hover:text-red-600 dark:border-zinc-800 dark:bg-zinc-900/80 dark:text-zinc-400 dark:group-hover:text-red-400"
                 aria-label={`${project.hrefLabel ?? "Open"} — ${project.title}`}
               >
                 {project.hrefLabel ?? "Open"}
@@ -38,32 +38,32 @@ export function ProjectGrid({ projects }: ProjectGridProps) {
                 />
               </a>
             ) : (
-              <span className="shrink-0 font-mono text-[11px] text-zinc-500">
+              <span className="w-fit shrink-0 font-mono text-[11px] text-zinc-500">
                 {project.hrefLabel}
               </span>
             )}
           </div>
 
-          <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+          <p className="text-sm leading-relaxed text-pretty text-zinc-600 dark:text-zinc-400">
             {project.description}
           </p>
 
-          <ul className="mt-4 flex-1 space-y-2">
+          <ul className="mt-3 flex-1 space-y-2 min-[400px]:mt-4">
             {project.highlights.map((line) => (
               <li
                 key={line}
-                className="text-sm leading-relaxed text-zinc-700 before:mr-2 before:text-red-500/80 before:content-['→'] dark:text-zinc-300 dark:before:text-red-500/70"
+                className="text-sm leading-relaxed text-pretty text-zinc-700 before:mr-2 before:text-red-500/80 before:content-['→'] dark:text-zinc-300 dark:before:text-red-500/70"
               >
                 {line}
               </li>
             ))}
           </ul>
 
-          <div className="mt-5 flex flex-wrap gap-2">
+          <div className="mt-4 flex flex-wrap gap-1.5 min-[400px]:mt-5 min-[400px]:gap-2">
             {project.tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-md border border-zinc-200 bg-zinc-50 px-2 py-0.5 font-mono text-[11px] text-zinc-600 dark:border-zinc-800 dark:bg-zinc-900/90 dark:text-zinc-400"
+                className="rounded-md border border-zinc-200 bg-zinc-50 px-2 py-0.5 font-mono text-[10px] text-zinc-600 min-[400px]:text-[11px] dark:border-zinc-800 dark:bg-zinc-900/90 dark:text-zinc-400"
               >
                 {tag}
               </span>

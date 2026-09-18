@@ -8,7 +8,7 @@ import { aboutText, experience, projects } from "@/lib/portfolio-data";
 
 function SectionLabel({ children }: { children: ReactNode }) {
   return (
-    <p className="mb-2 font-mono text-xs tracking-[0.18em] text-red-600 uppercase dark:text-red-500/90">
+    <p className="mb-2 font-mono text-[10px] tracking-[0.16em] text-red-600 uppercase sm:text-xs sm:tracking-[0.18em] dark:text-red-500/90">
       {children}
     </p>
   );
@@ -23,11 +23,11 @@ export default function Home() {
       />
       <div className="canvas-grid pointer-events-none fixed inset-0" aria-hidden />
 
-      <main className="relative z-10 mx-auto max-w-4xl px-6 py-14 pb-36">
+      <main className="safe-bottom relative z-10 mx-auto w-full max-w-4xl px-4 py-10 sm:px-6 sm:py-14">
         <HeroSection />
 
         <Reveal>
-          <section className="mt-16">
+          <section className="mt-12 sm:mt-16">
             <SectionLabel>About</SectionLabel>
             <p className="max-w-3xl text-sm leading-relaxed text-zinc-700 sm:text-base dark:text-zinc-300">
               {aboutText}
@@ -36,9 +36,12 @@ export default function Home() {
         </Reveal>
 
         <Reveal>
-          <section id="experience" className="mt-16 scroll-mt-28">
+          <section
+            id="experience"
+            className="mt-12 scroll-mt-24 sm:mt-16 sm:scroll-mt-28"
+          >
             <SectionLabel>Experience</SectionLabel>
-            <h2 className="mb-4 text-xl font-bold tracking-tight text-zinc-900 dark:text-white">
+            <h2 className="mb-4 text-lg font-bold tracking-tight text-zinc-900 sm:text-xl dark:text-white">
               Work
             </h2>
             <ExperienceList items={experience} />
@@ -46,9 +49,12 @@ export default function Home() {
         </Reveal>
 
         <Reveal>
-          <section id="projects" className="mt-16 scroll-mt-28">
+          <section
+            id="projects"
+            className="mt-12 scroll-mt-24 sm:mt-16 sm:scroll-mt-28"
+          >
             <SectionLabel>Projects</SectionLabel>
-            <h2 className="mb-4 text-xl font-bold tracking-tight text-zinc-900 dark:text-white">
+            <h2 className="mb-4 text-lg font-bold tracking-tight text-zinc-900 sm:text-xl dark:text-white">
               Selected builds
             </h2>
             <ProjectGrid projects={projects} />
