@@ -48,7 +48,7 @@ export const experience: Experience[] = [
     metrics: [
       { label: "Active users", value: "500+" },
       { label: "Institutions", value: "5" },
-      { label: "Revenue", value: "₹25L+" },
+      { label: "Revenue", value: "₹5.2L" },
       { label: "Releases", value: "10+" },
     ],
     bullets: [

@@ -9,7 +9,7 @@ type ExperienceListProps = {
 
 function highlightMetrics(text: string) {
   const parts = text.split(
-    /(\d+%|\d+\+?|₹[\d.]+L\+?|10\+|90%|25L)/gi,
+    /(\d+%|\d+\+?|₹[\d.]+L\+?|10\+|90%)/gi,
   );
   return parts.map((part, i) => {
     if (!part) return null;
